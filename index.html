@@ -1,1 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Him ♡</title>
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300;400&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+font-family:Poppins,sans-serif;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:4rem;
+}
+
+.hero p{
+opacity:.7;
+margin-top:10px;
+}
+
+.btn{
+margin-top:25px;
+padding:15px 35px;
+border:none;
+border-radius:999px;
+background:white;
+color:black;
+font-size:1rem;
+cursor:pointer;
+}
+
+.content{
+display:none;
+padding:40px 20px;
+max-width:800px;
+margin:auto;
+animation:fade 1s;
+}
+
+.photo{
+width:250px;
+height:250px;
+margin:auto;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:25px;
+}
+
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.card{
+background:#181818;
+padding:25px;
+border-radius:20px;
+line-height:1.8;
+}
+
+.heart{
+position:fixed;
+bottom:-20px;
+animation:float 6s linear infinite;
+opacity:.7;
+}
+
+@keyframes float{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-110vh);
+}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<h1>for him ♡</h1>
+<p>a little gift made with love</p>
+
+<button class="btn" onclick="openGift()">
+Open Gift 🎁
+</button>
+</section>
+
+<section class="content" id="content">
+
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43?w=800">
+</div>
+
+<div class="card">
+<h2>Hi, you.</h2>
+
+<br>
+
+<p>
+Among all the people I've met,
+you're one of the few who make ordinary days feel special.
+</p>
+
+<br>
+
+<p>
+Thank you for every conversation,
+every laugh,
+and every moment that stays in my head longer than it should.
+</p>
+
+<br>
+
+<p>
+If I could keep one thing forever,
+it would be the way you make me smile without even trying.
+</p>
+
+<br>
+
+<p>
+♡
+</p>
+
+</div>
+
+</section>
+
+<script>
+
+function openGift(){
+document.querySelector('.hero').style.display='none';
+document.getElementById('content').style.display='block';
+}
+
+setInterval(()=>{
+const heart=document.createElement('div');
+heart.className='heart';
+heart.innerHTML='♡';
+heart.style.left=Math.random()*100+'vw';
+heart.style.fontSize=(Math.random()*20+15)+'px';
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},300);
+
+</script>
+
+</body>
+</html>
